@@ -1,8 +1,16 @@
 package com.week2;
 
-public class LargeAppliance extends Product{
+import java.math.BigDecimal;
+
+public class LargeAppliance extends Product implements DeliveryChargeCalculator{
     public LargeAppliance(String name, int price, double weight) throws IllegalArgumentException {
         super(name, price, weight);
+    }
+
+    @Override
+    public BigDecimal getDeliveryCharge(Double weight, BigDecimal price) {
+        BigDecimal deliveryFee = CalcUtil.getDeliveryFeeByWeight(weight);
+        return CalcUtil.calcDeliveryFeeByPrice(deliveryFee, price);
     }
 
     @Override
