@@ -8,7 +8,7 @@ public class Product {
     private BigDecimal price;
     private Double weight;
 
-    public Product(String name, int price, double weight) throws IllegalArgumentException {
+    public Product(String name, int price, double weight) {
         this.name = name;
         this.price = convertPriceBigDecimal(price);
         this.weight = returnWeight(weight);
@@ -18,11 +18,11 @@ public class Product {
         this.name = name;
     }
 
-    public void setPrice(int price) throws IllegalArgumentException {
+    public void setPrice(int price) {
         this.price = convertPriceBigDecimal(price);
     }
 
-    public void setWeight(double weight) throws IllegalArgumentException {
+    public void setWeight(double weight) {
         this.weight = returnWeight(weight);
     }
 
@@ -36,6 +36,11 @@ public class Product {
 
     public Double getWeight() {
         return this.weight;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Name: %s\nPrice: %d\nWeight: %d\n", this.name, this.price.intValue(), this.weight.longValue());
     }
 
     private BigDecimal convertPriceBigDecimal(int price) {

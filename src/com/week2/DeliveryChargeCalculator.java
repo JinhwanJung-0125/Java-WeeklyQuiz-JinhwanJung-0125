@@ -1,5 +1,7 @@
 package com.week2;
 
-public interface DeliveryChargeCalculator {
+import java.math.BigDecimal;
 
+public interface DeliveryChargeCalculator {
+    BigDecimal getDeliveryCharge(Double weight, BigDecimal price);
 }
