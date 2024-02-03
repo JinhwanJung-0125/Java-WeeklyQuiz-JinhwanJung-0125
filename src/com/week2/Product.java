@@ -1,6 +1,7 @@
 package com.week2;
 
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
 
 public class Product {
 
@@ -9,13 +10,13 @@ public class Product {
     private Double weight;
 
     public Product(String name, int price, double weight) {
-        this.name = name;
+        this.name = returnName(name);
         this.price = convertPriceBigDecimal(price);
         this.weight = returnWeight(weight);
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.name = returnName(name);
     }
 
     public void setPrice(int price) {
@@ -40,7 +41,16 @@ public class Product {
 
     @Override
     public String toString() {
-        return String.format("Name: %s\nPrice: %d\nWeight: %d\n", this.name, this.price.intValue(), this.weight.longValue());
+        DecimalFormat decimalFormat = new DecimalFormat("###,###");
+        String price = decimalFormat.format(this.price);
+        return String.format("Name: %s\nPrice: %s 원\nWeight: %d KG\n", this.name, price, this.weight.longValue());
+    }
+
+    private String returnName(String name) {
+        if(name.isEmpty()) {
+            throw new IllegalArgumentException("name is not entered!");
+        }
+        return name;
     }
 
     private BigDecimal convertPriceBigDecimal(int price) {
