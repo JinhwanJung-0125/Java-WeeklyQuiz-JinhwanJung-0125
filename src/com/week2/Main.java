@@ -29,6 +29,6 @@ public class Main {
     public void printDeliveryFee(DeliveryChargeCalculator product, BigDecimal price, Double weight) {
         DecimalFormat decimalFormat = new DecimalFormat("###,###");
         String deliveryFee = decimalFormat.format(product.getDeliveryCharge(weight, price));
-        System.out.println(String.format("Delivery Fee: %s 원", deliveryFee));
+        System.out.printf("Delivery Fee: %s 원%n", deliveryFee);
     }
 }
