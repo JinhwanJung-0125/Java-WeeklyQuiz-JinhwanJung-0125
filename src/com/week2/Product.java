@@ -46,6 +46,9 @@ public class Product {
         return String.format("Name: %s\nPrice: %s 원\nWeight: %d KG\n", this.name, price, this.weight.longValue());
     }
 
+    /**
+     * 이름 칸이 비어있는지 확인하는 메소드
+     */
     private String returnName(String name) {
         if(name.isEmpty()) {
             throw new IllegalArgumentException("name is not entered!");
@@ -53,13 +56,19 @@ public class Product {
         return name;
     }
 
+    /**
+     * 가격이 0 이상인지 확인 후 BigDecimal로 변환하는 메소드
+     */
     private BigDecimal convertPriceBigDecimal(int price) {
         if (price < 0) {
             throw new IllegalArgumentException("price must bigger than zero!");
         }
-        return new BigDecimal(price);
+        return BigDecimal.valueOf(price);
     }
 
+    /**
+     * 무게가 0 이상인지 확인하는 메소드
+     */
     private Double returnWeight(double weight) {
         if (weight < 0) {
             throw new IllegalArgumentException("weight must bigger than zero!");
