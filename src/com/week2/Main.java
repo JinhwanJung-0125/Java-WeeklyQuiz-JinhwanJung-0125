@@ -23,6 +23,9 @@ public class Main {
         main.printDeliveryFee(largeAppliance, largeAppliance.getPrice(), largeAppliance.getWeight());
     }
 
+    /**
+     * 물건의 가격과 무게를 토대로 배송비를 계산한 뒤, print하는 메소드
+     */
     public void printDeliveryFee(DeliveryChargeCalculator product, BigDecimal price, Double weight) {
         DecimalFormat decimalFormat = new DecimalFormat("###,###");
         String deliveryFee = decimalFormat.format(product.getDeliveryCharge(weight, price));
