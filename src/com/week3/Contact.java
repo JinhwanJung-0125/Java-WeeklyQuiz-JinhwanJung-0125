@@ -6,11 +6,15 @@ public class Contact {
     protected String phoneNumber;
 
     public void setName(String name) {
-        this.name = name;
+        if(!name.isEmpty()) {
+            this.name = name;
+        }
     }
 
     public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+        if(!phoneNumber.isEmpty()) {
+            this.phoneNumber = phoneNumber;
+        }
     }
 
     public String getName() {
