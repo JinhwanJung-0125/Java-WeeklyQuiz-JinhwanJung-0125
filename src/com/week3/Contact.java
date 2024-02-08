@@ -6,13 +6,13 @@ public class Contact {
     protected String phoneNumber;
 
     public void setName(String name) {
-        if(!name.isEmpty()) {
+        if (!checkArgEmpty(name)) {
             this.name = name;
         }
     }
 
     public void setPhoneNumber(String phoneNumber) {
-        if(!phoneNumber.isEmpty()) {
+        if (!checkArgEmpty(phoneNumber)) {
             this.phoneNumber = phoneNumber;
         }
     }
@@ -23,5 +23,9 @@ public class Contact {
 
     public String getPhoneNumber() {
         return this.phoneNumber;
+    }
+
+    private boolean checkArgEmpty(String arg) {
+        return arg.isEmpty();
     }
 }
