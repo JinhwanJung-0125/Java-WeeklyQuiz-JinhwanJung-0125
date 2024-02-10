@@ -11,14 +11,12 @@ public final class Application {
     }
 
     public static void run() {
-        String commend;
         boolean flag = true;
 
         while (flag) {
             printMenu();
-            commend = scanner.next();
 
-            switch (commend) {
+            switch (scanner.next()) {
                 case "1":
                     executeNumberOneMenu();
                     break;
@@ -63,13 +61,13 @@ public final class Application {
 
     private static void executeNumberOneMenu() {
         System.out.print("이름을 입력하세요: ");
-        String name = scanner.next();
+        String name = inputCommend();
 
         System.out.print("전화번호를 입력하세요: ");
-        String phoneNumber = scanner.next();
+        String phoneNumber = inputCommend();
 
         System.out.print("회사명을 입력하세요: ");
-        String company = scanner.next();
+        String company = inputCommend();
 
         try {
             addressBook.addBusinessContact(name, phoneNumber, company);
@@ -80,13 +78,13 @@ public final class Application {
 
     private static void executeNumberTwoMenu() {
         System.out.print("이름을 입력하세요: ");
-        String name = scanner.next();
+        String name = inputCommend();
 
         System.out.print("전화번호를 입력하세요: ");
-        String phoneNumber = scanner.next();
+        String phoneNumber = inputCommend();
 
         System.out.print("관계를 입력하세요: ");
-        String relationship = scanner.next();
+        String relationship = inputCommend();
 
         try {
             addressBook.addPersonalContact(name, phoneNumber, relationship);
@@ -101,15 +99,29 @@ public final class Application {
 
     private static void executeNumberFourMenu() {
         System.out.print("검색할 이름을 입력하세요: ");
-        String name = scanner.next();
+        String name = inputCommend();
 
         addressBook.searchContact(name);
     }
 
     private static void executeNumberFiveMenu() {
         System.out.print("삭제할 연락처의 이름을 입력하세요: ");
-        String name = scanner.next();
+        String name = inputCommend();
 
         addressBook.deleteContact(name);
     }
+
+    /**
+     * 사용자의 입력 값을 콘솔을 통해 받는 메소드. <br>
+     * 사용자로부터 빈값이 아닌 값을 입력 받을 때까지 반복한다.
+     */
+    private static String inputCommend() {
+        String input = "";
+        while (input.isEmpty() || input.equals(" ")) {
+            input = scanner.nextLine();
+        }
+
+        return input;
+    }
+
 }
