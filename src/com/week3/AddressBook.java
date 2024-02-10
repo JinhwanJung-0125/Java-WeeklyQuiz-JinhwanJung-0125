@@ -11,6 +11,26 @@ public class AddressBook {
         this.contacts = new ArrayList<>();
     }
 
+    public void addBusinessContact(String name, String phoneNumber, String company) {
+        this.contacts.add(new BusinessContact(name, phoneNumber, company));
+    }
+
+    public void addPersonalContact(String name, String phoneNumber, String relationship) {
+        this.contacts.add(new PersonalContact(name, phoneNumber, relationship));
+    }
+
+    public void deleteContact(String name) {
+        Contact targetContact = searchContactByName(name);
+
+        if (targetContact == null) {
+            System.out.println("연락처를 찾을 수 없습니다.");
+            return;
+        }
+        this.contacts.remove(targetContact);
+
+        System.out.printf("%s 연락처가 삭제되었습니다.%n", name);
+    }
+
     public void displayContacts() {
         if (this.contacts.isEmpty()) {
             System.out.println("연락처가 비어있습니다.");
