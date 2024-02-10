@@ -34,7 +34,7 @@ public class Contact {
         return this.phoneNumber;
     }
 
-    private boolean checkArgEmpty(String arg) {
+    protected boolean checkArgEmpty(String arg) {
         return arg.isEmpty();
     }
 }
