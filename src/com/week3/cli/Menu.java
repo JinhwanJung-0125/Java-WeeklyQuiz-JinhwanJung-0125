@@ -1,5 +1,6 @@
-package com.week3;
+package com.week3.cli;
 
+import com.week3.core.AddressBook;
 import java.util.Scanner;
 
 public class Menu {
