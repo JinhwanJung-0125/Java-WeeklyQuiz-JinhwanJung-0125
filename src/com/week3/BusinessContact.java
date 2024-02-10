@@ -14,6 +14,16 @@ public class BusinessContact extends Contact {
         this.company = company;
     }
 
+    public void setCompany(String company) {
+        if(!super.checkArgEmpty(company)) {
+            this.company = company;
+        }
+    }
+
+    public String getCompany() {
+        return this.company;
+    }
+
     @Override
     public String toString() {
         return String.format("이름: %s, 전화번호: %s, 회사명: %s", name, phoneNumber, company);

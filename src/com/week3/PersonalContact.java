@@ -14,6 +14,16 @@ public class PersonalContact extends Contact {
         this.relationship = relationship;
     }
 
+    public void setRelationship(String relationship) {
+        if(!super.checkArgEmpty(relationship)) {
+            this.relationship = relationship;
+        }
+    }
+
+    public String getRelationship() {
+        return this.relationship;
+    }
+
     @Override
     public String toString() {
         return String.format("이름: %s, 전화번호: %s, 관계: %s", name, phoneNumber, relationship);
