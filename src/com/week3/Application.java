@@ -32,6 +32,9 @@ public final class Application {
                     executeNumberFourMenu();
                     break;
                 case "5":
+                    executeNumberFiveMenu();
+                    break;
+                case "6":
                     System.out.println("프로그램을 종료합니다.");
                     flag = false;
                     break;
@@ -45,11 +48,14 @@ public final class Application {
 
     private static void printMenu() {
         StringBuffer sb = new StringBuffer();
+        sb.append("===========================\n");
         sb.append("1. 비즈니스 연락처 추가\n");
         sb.append("2. 개인 연락처 추가\n");
         sb.append("3. 연락처 출력\n");
         sb.append("4. 연락처 검색\n");
-        sb.append("5. 종료\n");
+        sb.append("5. 연락처 삭제\n");
+        sb.append("6. 종료\n");
+        sb.append("===========================\n");
         sb.append("메뉴를 선택해주세요: ");
 
         System.out.print(sb);
@@ -98,5 +104,12 @@ public final class Application {
         String name = scanner.next();
 
         addressBook.searchContact(name);
+    }
+
+    private static void executeNumberFiveMenu() {
+        System.out.print("삭제할 연락처의 이름을 입력하세요: ");
+        String name = scanner.next();
+
+        addressBook.deleteContact(name);
     }
 }
