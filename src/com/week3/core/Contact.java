@@ -1,4 +1,4 @@
-package com.week3;
+package com.week3.core;
 
 public class Contact {
 

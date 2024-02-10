@@ -1,4 +1,4 @@
-package com.week3;
+package com.week3.cli;
 
 import java.util.Scanner;
 
