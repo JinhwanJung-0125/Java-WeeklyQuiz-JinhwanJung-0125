@@ -13,4 +13,9 @@ public class PersonalContact extends Contact {
 
         this.relationship = relationship;
     }
+
+    @Override
+    public String toString() {
+        return String.format("이름: %s, 전화번호: %s, 관계: %s", name, phoneNumber, relationship);
+    }
 }
