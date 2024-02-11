@@ -27,7 +27,7 @@ public class Menu {
         System.out.print(sb);
     }
 
-    void executeNumberOneMenu() {
+    void addBusinessContactMenu() {
         System.out.print("이름을 입력하세요: ");
         String name = inputCommend();
 
@@ -44,7 +44,7 @@ public class Menu {
         }
     }
 
-    void executeNumberTwoMenu() {
+    void addPersonalContactMenu() {
         System.out.print("이름을 입력하세요: ");
         String name = inputCommend();
 
@@ -61,18 +61,18 @@ public class Menu {
         }
     }
 
-    void executeNumberThreeMenu() {
+    void displayContactsMenu() {
         addressBook.displayContacts();
     }
 
-    void executeNumberFourMenu() {
+    void searchContactMenu() {
         System.out.print("검색할 이름을 입력하세요: ");
         String name = inputCommend();
 
         addressBook.searchContact(name);
     }
 
-    void executeNumberFiveMenu() {
+    void deleteContactMenu() {
         System.out.print("삭제할 연락처의 이름을 입력하세요: ");
         String name = inputCommend();
 

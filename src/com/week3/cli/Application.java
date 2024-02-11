@@ -18,19 +18,19 @@ public final class Application {
 
             switch (scanner.next()) {
                 case "1":
-                    menu.executeNumberOneMenu();
+                    menu.addBusinessContactMenu();
                     break;
                 case "2":
-                    menu.executeNumberTwoMenu();
+                    menu.addPersonalContactMenu();
                     break;
                 case "3":
-                    menu.executeNumberThreeMenu();
+                    menu.displayContactsMenu();
                     break;
                 case "4":
-                    menu.executeNumberFourMenu();
+                    menu.searchContactMenu();
                     break;
                 case "5":
-                    menu.executeNumberFiveMenu();
+                    menu.deleteContactMenu();
                     break;
                 case "6":
                     System.out.println("프로그램을 종료합니다.");
