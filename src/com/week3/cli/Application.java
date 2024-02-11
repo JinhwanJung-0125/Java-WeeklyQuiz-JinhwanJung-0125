@@ -11,7 +11,7 @@ public final class Application {
     }
 
     public static void run() {
-        boolean flag = true;
+        boolean flag = true; // while loop 제어 flag
 
         while (flag) {
             menu.printMenu();
@@ -37,7 +37,7 @@ public final class Application {
                     flag = false;
                     break;
                 default:
-                    System.out.println("올바른 번호를 선택해주세요. (1 ~ 5)");
+                    System.out.println("올바른 번호를 선택해주세요. (1 ~ 6)");
             }
         }
 
