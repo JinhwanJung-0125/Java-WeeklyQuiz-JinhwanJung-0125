@@ -12,6 +12,9 @@ public class Menu {
         this.scanner = scanner;
     }
 
+    /**
+     * 메뉴 선택 UI 출력 메소드
+     */
     void printMenu() {
         StringBuffer sb = new StringBuffer();
         sb.append("===========================\n");
@@ -27,6 +30,9 @@ public class Menu {
         System.out.print(sb);
     }
 
+    /**
+     * 1번 메뉴 비즈니스 연락처 추가 UI 출력 및 실행 메소드
+     */
     void addBusinessContactMenu() {
         System.out.print("이름을 입력하세요: ");
         String name = inputCommend();
@@ -44,6 +50,9 @@ public class Menu {
         }
     }
 
+    /**
+     * 2번 메뉴 개인 연락처 추가 UI 출력 및 실행 메소드
+     */
     void addPersonalContactMenu() {
         System.out.print("이름을 입력하세요: ");
         String name = inputCommend();
@@ -61,10 +70,16 @@ public class Menu {
         }
     }
 
+    /**
+     * 3번 메뉴 연락처 출력 메소드
+     */
     void displayContactsMenu() {
         addressBook.displayContacts();
     }
 
+    /**
+     * 4번 메뉴 연락처 검색 UI 출력 및 실행 메소드
+     */
     void searchContactMenu() {
         System.out.print("검색할 이름을 입력하세요: ");
         String name = inputCommend();
@@ -72,6 +87,9 @@ public class Menu {
         addressBook.searchContact(name);
     }
 
+    /**
+     * 5번 메뉴 연락처 삭제 UI 출력 및 실행 메소드
+     */
     void deleteContactMenu() {
         System.out.print("삭제할 연락처의 이름을 입력하세요: ");
         String name = inputCommend();
