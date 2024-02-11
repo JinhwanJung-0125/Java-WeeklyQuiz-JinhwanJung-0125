@@ -85,7 +85,7 @@ public class Menu {
      */
     private String inputCommend() {
         String input = "";
-        while (input.isEmpty() || input.equals(" ")) {
+        while (input.isEmpty() || input.contains(" ")) {
             input = scanner.nextLine();
         }
 
