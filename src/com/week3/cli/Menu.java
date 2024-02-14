@@ -103,10 +103,17 @@ public class Menu {
      */
     private String inputCommend() {
         String input = "";
-        while (input.isEmpty()) {
+        while (validateInput(input)) {
             input = scanner.nextLine();
         }
 
         return input;
+    }
+
+    /**
+     * 입력받은 input이 빈값인지 확인하는 메소드
+     */
+    private boolean validateInput(String input) {
+        return input.replaceAll(" ", "").isEmpty();
     }
 }
