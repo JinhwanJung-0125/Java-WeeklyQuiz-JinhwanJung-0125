@@ -2,6 +2,7 @@ package com.week3.cli;
 
 import com.week3.core.AddressBook;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class Menu {
 
@@ -38,7 +39,7 @@ public class Menu {
         String name = inputCommend();
 
         System.out.print("전화번호를 입력하세요: ");
-        String phoneNumber = inputCommend();
+        String phoneNumber = inputPhoneNumber();
 
         System.out.print("회사명을 입력하세요: ");
         String company = inputCommend();
@@ -58,7 +59,7 @@ public class Menu {
         String name = inputCommend();
 
         System.out.print("전화번호를 입력하세요: ");
-        String phoneNumber = inputCommend();
+        String phoneNumber = inputPhoneNumber();
 
         System.out.print("관계를 입력하세요: ");
         String relationship = inputCommend();
@@ -115,5 +116,30 @@ public class Menu {
      */
     private boolean validateInput(String input) {
         return input.replaceAll(" ", "").isEmpty();
+    }
+
+    /**
+     * 사용자가 입력한 전화번호 값을 콘솔을 통해 받는 메소드. <br>
+     * 사용자로부터 올바른 전화번호를 입력 받을 때까지 반복한다.
+     */
+    private String inputPhoneNumber() {
+        String phoneNumber;
+        while (true) {
+            phoneNumber = scanner.nextLine();
+
+            if (validatePhoneNumber(phoneNumber)) {
+                break;
+            }
+            System.out.println("올바른 전화번호 형식이 아닙니다. ([XX 혹은 XXX]-XXXX-XXXX)");
+        }
+
+        return phoneNumber;
+    }
+
+    /**
+     * 입력받은 값이 올바른 전화번호 형식인지 확인하는 메소드
+     */
+    private boolean validatePhoneNumber(String phoneNumber) {
+        return Pattern.matches("[0-9]{2,3}-[0-9]{4}-[0-9]{4}", phoneNumber);
     }
 }
