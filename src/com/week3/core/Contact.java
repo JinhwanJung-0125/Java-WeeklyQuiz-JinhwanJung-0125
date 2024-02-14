@@ -37,4 +37,9 @@ public class Contact {
     protected boolean checkArgEmpty(String arg) {
         return arg.isEmpty();
     }
+
+    @Override
+    public String toString() {
+        return String.format("이름: %s, 전화번호: %s", name, phoneNumber);
+    }
 }

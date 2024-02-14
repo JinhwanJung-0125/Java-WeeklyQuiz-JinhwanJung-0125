@@ -26,6 +26,6 @@ public class BusinessContact extends Contact {
 
     @Override
     public String toString() {
-        return String.format("이름: %s, 전화번호: %s, 회사명: %s", name, phoneNumber, company);
+        return String.format("%s, 회사명: %s", super.toString(), company);
     }
 }
