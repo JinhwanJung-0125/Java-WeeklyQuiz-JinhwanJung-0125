@@ -103,7 +103,7 @@ public class Menu {
      */
     private String inputCommend() {
         String input = "";
-        while (input.isEmpty() || input.contains(" ")) {
+        while (input.isEmpty()) {
             input = scanner.nextLine();
         }
 
