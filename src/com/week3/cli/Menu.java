@@ -124,16 +124,15 @@ public class Menu {
      */
     private String inputPhoneNumber() {
         String phoneNumber;
+
         while (true) {
             phoneNumber = scanner.nextLine();
 
             if (validatePhoneNumber(phoneNumber)) {
-                break;
+                return phoneNumber;
             }
             System.out.println("올바른 전화번호 형식이 아닙니다. ([XX 혹은 XXX]-XXXX-XXXX)");
         }
-
-        return phoneNumber;
     }
 
     /**
